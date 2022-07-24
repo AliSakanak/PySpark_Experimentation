@@ -1,6 +1,6 @@
 ##import required libraries
 import pyspark
-from PySpark_Experimentation.connector_variables import DB_PASSWORD, DB_USER, MYSQL_DRIVER, MYSQL_JAR, MYSQL_URL
+from connector_variables import DB_USER, MYSQL_DRIVER, MYSQL_JAR, MYSQL_URL, DB_PASSWORD
 
 ##create spark session
 spark = pyspark.sql.SparkSession \
@@ -19,8 +19,19 @@ movies_df = spark.read \
    .option("password", DB_PASSWORD) \
    .option("driver", MYSQL_DRIVER) \
    .load()
+   
+##add code below
+user_df = spark.read \
+   .format("jdbc") \
+   .option("url", MYSQL_URL) \
+   .option("dbtable", "users") \
+   .option("user", DB_USER) \
+   .option("password", DB_PASSWORD) \
+   .option("driver", MYSQL_DRIVER) \
+   .load()
 
-##print the movies_df
+##print the users dataframe
+print(user_df.show())
 print(movies_df.show())
 
 

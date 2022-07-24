@@ -1,4 +1,4 @@
-MYSQL_JAR = "PySpark_Experimentation/mysql-connector-java-8.0.29.jar"
+MYSQL_JAR = "mysql-connector-java-8.0.29.jar"
 MYSQL_URL = "jdbc:mysql://localhost:3306/db_for_spark"
 MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver"
 
