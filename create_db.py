@@ -32,7 +32,7 @@ def create_tables():
         CREATE TABLE IF NOT EXISTS users (
             id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
             movie_id INTEGER NOT NULL,
-            rating VARCHAR(5),
+            rating decimal(2,1),
             CONSTRAINT fk_movies
                 FOREIGN KEY(movie_id)
                     REFERENCES movies(id)

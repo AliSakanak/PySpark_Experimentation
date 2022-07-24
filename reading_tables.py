@@ -21,7 +21,7 @@ movies_df = spark.read \
    .load()
    
 ##add code below
-user_df = spark.read \
+users_df = spark.read \
    .format("jdbc") \
    .option("url", MYSQL_URL) \
    .option("dbtable", "users") \
@@ -31,7 +31,7 @@ user_df = spark.read \
    .load()
 
 ##print the users dataframe
-print(user_df.show())
+print(users_df.show())
 print(movies_df.show())
 
 
