@@ -1,6 +1,6 @@
 ##import required libraries
 import pyspark
-from connector_variables import DB_USER, MYSQL_DRIVER, MYSQL_JAR, MYSQL_URL, DB_PASSWORD
+from PySpark_Experimentation.connector_variables import DB_USER, MYSQL_DRIVER, MYSQL_JAR, MYSQL_URL, DB_PASSWORD
 
 ##create spark session
 spark = pyspark.sql.SparkSession \
